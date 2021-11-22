@@ -7,7 +7,10 @@ const assertEqual = function(actual,expected) {
 };
 
 const head = function(arr) {
-  return typeof arr === 'object' ? arr[0] : '🔴️NON-OBJECT🔴️';
+  if (!Array.isArray(arr)) {
+    return;
+  }
+  return arr[0];
 };
 
 assertEqual(head([5,6,7]), 5);
