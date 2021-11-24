@@ -20,7 +20,7 @@ const without = (source,itemsToRemove) => {
       //the removal trigger is set, and the loop breaks since we do not need to check the rest of the values
       if (original === remove) {
         shouldRemove = true;
-        break;
+        //break;
       }
 
     }
