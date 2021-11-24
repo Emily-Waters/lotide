@@ -41,32 +41,47 @@ const without = (source,itemsToRemove) => {
 
 
 const assertArraysEqual = (actual,expected) => {
+
   if (eqArrays(actual,expected)) {
-    console.log(`💚️\tAssertion Passed: ${actual} === ${expected}`);
+
+    console.log('💚️\tAssertion Passed:', actual ,'===', expected);
+  
   } else {
-    console.log(`🔴️\tAssertion Failed: ${actual} !== ${expected}`);
+
+    console.log('🔴️\tAssertion Failed:', actual ,'!==', expected);
+
   }
 };
 
 const eqArrays = (actual,expected) => {
 
-  for (let index = 0; index <= actual.length - 1; index++) {
-    if (actual[index] !== expected[index]) {
-      return false;
-    }
+  if (actual.length !== expected.length) {
+
+    return false;
+
   }
+
+
+  for (let index = 0; index <= actual.length - 1; index++) {
+
+    if (actual[index] !== expected[index]) {
+
+      return false;
+
+    }
+
+  }
+
   return true;
 };
-
-
 //TESTING without
 //console.log(without([],[]))
 
 console.log("\nTesting 'without'\n");
 
-console.log(without([1, 2, 3], [1])); // => [2, 3]
-console.log(without(["1", "2", "3"], [1, 2, "3"])); // => ["1", "2"]
-console.log(without([1, '1', 2, '2', 3, '3', 4, '4', 4], [1,2,3,4])); // => ['1', '2', '3', '4']
+console.log('Expect [2, 3] : ' ,without([1, 2, 3], [1])); // => [2, 3]
+console.log('Expect  ["1", "2"] : ', without(["1", "2", "3"], [1, 2, "3"])); // => ["1", "2"]
+console.log("Expect  ['1', '2', '3', '4'] : ",without([1, '1', 2, '2', 3, '3', 4, '4', 4], [1,2,3,4])); // => ['1', '2', '3', '4']
 
 //TESTING without FOR EQUALITY WITH assertArraysEqual
 //assertArraysEqual(without([], []),[]); // => PASS/FAIL

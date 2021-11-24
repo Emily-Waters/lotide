@@ -8,11 +8,23 @@ const assertEqual = (actual,expected) => {
 
 const eqArrays = (actual,expected) => {
 
-  for (let index = 0; index <= actual.length - 1; index++) {
-    if (actual[index] !== expected[index]) {
-      return false;
-    }
+  if (actual.length !== expected.length) {
+
+    return false;
+
   }
+
+
+  for (let index = 0; index <= actual.length - 1; index++) {
+
+    if (actual[index] !== expected[index]) {
+
+      return false;
+
+    }
+
+  }
+
   return true;
 };
 
