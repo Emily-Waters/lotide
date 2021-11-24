@@ -25,11 +25,16 @@
 
 //  Creating my own assertEqual func for testing
 
-const assertEqual = function(actual,expected) {
+const assertEqual = (actual,expected) => {
+
   if (actual === expected) {
-    console.log(`💚️\tAssertion Passed: ${actual} === ${expected}`);
+
+    console.log('💚️\tAssertion Passed:', actual ,'===', expected);
+
   } else {
-    console.log(`🔴️\tAssertion Failed: ${actual} !== ${expected}`);
+
+    console.log('🔴️\tAssertion Failed:', actual ,'!==', expected);
+    
   }
 };
 
