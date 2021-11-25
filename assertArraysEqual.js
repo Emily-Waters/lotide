@@ -1,35 +1,20 @@
 const assertArraysEqual = (actual,expected) => {
-
   if (eqArrays(actual,expected)) {
-
-    console.log('💚️\tAssertion Passed:', actual ,'===', expected);
-  
+    console.log('💚️💚️💚️\tAssertion Passed:', actual ,'===', expected);
   } else {
-
-    console.log('🔴️\tAssertion Failed:', actual ,'!==', expected);
-
+    console.log('🔴️🔴️🔴️\tAssertion Failed:', actual ,'!==', expected);
   }
 };
 
 const eqArrays = (actual,expected) => {
-
   if (actual.length !== expected.length) {
-
     return false;
-
   }
-
-
   for (let index = 0; index <= actual.length - 1; index++) {
-
     if (actual[index] !== expected[index]) {
-
       return false;
-
     }
-
   }
-
   return true;
 };
 

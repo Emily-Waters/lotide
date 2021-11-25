@@ -1,22 +1,16 @@
 const assertObjectsEqual = (actual, expected) => {
-
-  //const inspect = require('util').inspect;
-  //console.log(`Example label: ${inspect(actual)}`);
-
   if (eqObjects(actual,expected)) {
-    console.log('💚️\tAssertion Passed:', actual ,'===', expected);
+    console.log('💚️💚️💚️\tAssertion Passed:', actual ,'===', expected);
   } else {
-    console.log('🔴️\tAssertion Failed:', actual ,'!==', expected);
+    console.log('🔴️🔴️🔴️\tAssertion Failed:', actual ,'!==', expected);
   }
 };
 
 
 const eqObjects = function(object1, object2) {
-
   const object1Keys = Object.keys(object1);
   const object2Keys = Object.keys(object2);
   const allObjectKeys = object1Keys.concat(object2Keys);
-
   if (object1Keys.length !== object2Keys.length) {
     return false;
   }
@@ -42,9 +36,9 @@ const assertEqual = (actual,expected) => {
 
 const assertArraysEqual = (actual,expected) => {
   if (eqArrays(actual,expected)) {
-    console.log('💚️\tAssertion Passed:', actual ,'===', expected);
+    console.log('💚️💚️💚️\tAssertion Passed:', actual ,'===', expected);
   } else {
-    console.log('🔴️\tAssertion Failed:', actual ,'!==', expected);
+    console.log('🔴️🔴️🔴️\tAssertion Failed:', actual ,'!==', expected);
   }
 };
 
