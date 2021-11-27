@@ -1,47 +1,37 @@
-
-// Returns true if both objects have identical keys with identical values.
-// Otherwise you get back a big fat false!
-const eqObjects = function(object1, object2) {
-
-  const object1Keys = Object.keys(object1);
-  const object2Keys = Object.keys(object2);
-  const allObjectKeys = object1Keys.concat(object2Keys);
-
-  if (object1Keys.length !== object2Keys.length) {
+const eqObjects = function(actual, expected) {
+  const actualKeys = Object.keys(actual);
+  const expectedKeys = Object.keys(expected);
+  if (actualKeys.length !== expectedKeys.length) {
     return false;
   }
-
-  for (const key of allObjectKeys) {
-
-    if (Array.isArray(object1[key])) {
-
-      if (!eqArrays(object1[key], object2[key])) {
+  for (const keys of actualKeys) {
+    if (actual[keys] !== expected[keys]) {
+      if (Array.isArray(actual[keys]) && Array.isArray(expected[keys])) {
+        if (!eqArrays(actual[keys],expected[keys])) {
+          return false;
+        }
+      } else {
         return false;
       }
-
-    } else if (object1[key] !== object2[key]) {
-      return false;
     }
   }
   return true;
 };
 
-
-
-
 const assertEqual = (actual,expected) => {
   if (actual === expected) {
-    console.log('💚️\tAssertion Passed:', actual ,'===', expected);
+    console.log('💚️💚️💚️\tAssertion Passed:', actual ,'===', expected);
   } else {
-    console.log('🔴️\tAssertion Failed:', actual ,'!==', expected);
+    console.log('🔴️🔴️🔴️\tAssertion Failed:', actual ,'!==', expected);
   }
 };
 
+
 const assertArraysEqual = (actual,expected) => {
   if (eqArrays(actual,expected)) {
-    console.log('💚️\tAssertion Passed:', actual ,'===', expected);
+    console.log('💚️💚️💚️\tAssertion Passed:', actual ,'===', expected);
   } else {
-    console.log('🔴️\tAssertion Failed:', actual ,'!==', expected);
+    console.log('🔴️🔴️🔴️\tAssertion Failed:', actual ,'!==', expected);
   }
 };
 
@@ -57,6 +47,13 @@ const eqArrays = (actual,expected) => {
   return true;
 };
 
+const assertObjectsEqual = (actual, expected) => {
+  if (eqObjects(actual,expected)) {
+    console.log('💚️💚️💚️\tAssertion Passed:', actual ,'===', expected);
+  } else {
+    console.log('🔴️🔴️🔴️\tAssertion Failed:', actual ,'!==', expected);
+  }
+};
 
 
 const ab = { a: "1", b: "2" };
@@ -73,3 +70,8 @@ assertEqual(eqObjects(cd, dc), true);
 
 const cd2 = { c: "1", d: ["2", 3, 4] };
 assertEqual(eqObjects(cd, cd2), false);
+
+
+// console.log(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 })) // => true
+// eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }) // => false
+// eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }) // => false
