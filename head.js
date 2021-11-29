@@ -1,5 +1,3 @@
-const assertEqual = require('./assertEqual');
-
 const head = function(arr) {
   if (!Array.isArray(arr)) {
     return;
