@@ -1,5 +1,5 @@
 {
-  "name": "lotide",
+  "name": "@emilywaters/lotide",
   "version": "1.0.0",
   "description": "Lotide is an equality assertion tool, a simplistic model of Lodash",
   "main": "",
