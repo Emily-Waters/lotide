@@ -18,32 +18,21 @@ const countLetters = require('./countLetters');
 
 
 const countOnly = (allItems, itemsToCount) => {
-
   const resultObj = {};
   let counter = 0;
-
   for (const key in itemsToCount) {
-
     counter = 0;
-
     //Check if the value of the current key is truthy, and if the current key is in the list of items.
     if (itemsToCount[key] && allItems.includes(key)) {
-
       //Looping through the list to determine how many times the item occurs and recording those occurences with a counter
       for (const items of allItems) {
-
         if (items === key) {
-
           //Increment counter
           counter++;
-
         }
-
       }
-
       //Creating a new key in the Object to be returned and assigning its value equal to the counter (how many times it occurs in the list).
       resultObj[key] = counter;
-
     }
   }
   return resultObj;
@@ -51,23 +40,23 @@ const countOnly = (allItems, itemsToCount) => {
 
 
 
-const firstNames = [
-  "Karl",
-  "Salima",
-  "Agouhanna",
-  "Fang",
-  "Kavith",
-  "Jason",
-  "Salima",
-  "Fang",
-  "Joe"
-];
+// const firstNames = [
+//   "Karl",
+//   "Salima",
+//   "Agouhanna",
+//   "Fang",
+//   "Kavith",
+//   "Jason",
+//   "Salima",
+//   "Fang",
+//   "Joe"
+// ];
 
-const result1 = countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false });
+// const result1 = countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false });
 
-assertEqual(result1["Jason"], 1);
-assertEqual(result1["Karima"], undefined);
-assertEqual(result1["Fang"], 2);
-assertEqual(result1["Agouhanna"], undefined);
+// assertEqual(result1["Jason"], 1);
+// assertEqual(result1["Karima"], undefined);
+// assertEqual(result1["Fang"], 2);
+// assertEqual(result1["Agouhanna"], undefined);
 
 module.exports = countLetters;
