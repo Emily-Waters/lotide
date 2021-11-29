@@ -1,0 +1,30 @@
+{
+  "name": "lotide",
+  "version": "1.0.0",
+  "description": "Lotide is an equality assertion tool, a simplistic model of Lodash",
+  "main": "",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Emily-Waters/lotide.git"
+  },
+  "keywords": [
+    "LHL",
+    "Lotide"
+  ],
+  "author": "Emily Waters",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Emily-Waters/lotide/issues"
+  },
+  "homepage": "https://github.com/Emily-Waters/lotide#readme",
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^9.1.3"
+  }
+}
