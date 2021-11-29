@@ -1,17 +1,5 @@
-const assertEqual = (actual,expected) => {
-
-  if (actual === expected) {
-
-    console.log('💚️\tAssertion Passed:', actual ,'===', expected);
-
-  } else {
-
-    console.log('🔴️\tAssertion Failed:', actual ,'!==', expected);
-    
-  }
-};
-
-
+const assertEqual = require('./assertEqual');
+const countLetters = require('./countLetters');
 /*
 * Function Behaviour
 * countOnly will be given an array and an object. It will return
@@ -63,10 +51,6 @@ const countOnly = (allItems, itemsToCount) => {
 
 
 
-
-
-
-
 const firstNames = [
   "Karl",
   "Salima",
@@ -85,3 +69,5 @@ assertEqual(result1["Jason"], 1);
 assertEqual(result1["Karima"], undefined);
 assertEqual(result1["Fang"], 2);
 assertEqual(result1["Agouhanna"], undefined);
+
+module.exports = countLetters;
