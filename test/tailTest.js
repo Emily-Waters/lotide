@@ -1,9 +1,25 @@
-// Test Case 1: Check the returned array elements ANSWER COPIED FROM COMPASS. Instructions do not specify that I should refactor assertEqual at this time
-
-const assertEqual = require('../assertEqual');
+const assert = require('chai').assert;
 const tail = require('../tail');
+const eqArrays = require('../eqArrays');
 
-const result = tail(["Hello", "Lighthouse", "Labs"]);
-assertEqual(result.length, 2); // ensure we get back two elements
-assertEqual(result[0], "Lighthouse"); // ensure first element is "Lighthouse"
-assertEqual(result[1], "Labs"); // ensure second element is "Labs"
+describe('#tail\n', () => {
+
+  it("returns length of 2 for [1, 2, 3]", () => {
+    assert.strictEqual(tail([1, 2, 3]).length , 2);
+  });
+
+  it("returns [2, 3] for [1, 2, 3]", () => {
+    eqArrays(tail([1, 2, 3]), [2, 3]);
+
+  });
+
+  it("returns undefined for non-arrays", () => {
+    assert.strictEqual(tail(0), undefined);
+  });
+
+  it("returns an [] for []", () => {
+    eqArrays(tail([]), []);
+  });
+
+});
+
