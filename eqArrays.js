@@ -1,11 +1,11 @@
-const eqArrays = (actual,expected) => {
+const eqArrays = function(actual, expected) {
   if (actual.length !== expected.length) {
     return false;
   }
-  for (let index = 0; index <= actual.length - 1; index++) {
+  for (let index = 0; index < actual.length; index++) {
     if (actual[index] !== expected[index]) {
       if (Array.isArray(actual[index]) && Array.isArray(expected[index])) {
-        if (!eqArrays(actual[index], expected[index])) {
+        if (!eqArrays(actual[index],expected[index])) {
           return false;
         }
       } else {
@@ -15,6 +15,5 @@ const eqArrays = (actual,expected) => {
   }
   return true;
 };
-
 
 module.exports = eqArrays;
