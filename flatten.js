@@ -1,17 +1,14 @@
-const flatten = (arr) => {
-  const resultArr = [];
-  for (let item of arr) {
-    if (Array.isArray(item)) {
-      for (let nestItem of item) {
-        resultArr.push(nestItem);
-      }
+//RECURSIVE FLATTEN
+const flatten  = function(arr,result) {
+  let resultArr = result || [];
+  arr.forEach((element) => {
+    if (Array.isArray(element)) {
+      flatten(element,resultArr);
     } else {
-      resultArr.push(item);
+      resultArr.push(element);
     }
-  }
+  });
   return resultArr;
 };
 
 module.exports = flatten;
-
-// console.log(flatten([1, 2, [3, 4], 5, [6]]));// => [1, 2, 3, 4, 5, 6]
